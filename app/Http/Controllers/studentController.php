@@ -39,5 +39,7 @@ class studentController extends Controller
 
      public function StudentApply(){
         return view('student.index');
+
+        
     }
 }
