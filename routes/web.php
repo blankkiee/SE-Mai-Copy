@@ -36,6 +36,7 @@ require __DIR__.'/auth.php';
 
 //Admin Group Middleware
 Route::middleware(['auth','role:admin'])->group(function(){
+
     Route::get('/admin/dashboard', [AdminController::class, 
     'AdminDashboard'])->name('admin.dashboard');
 
@@ -47,19 +48,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 });// End Group Admin Middleware
 
-
-//Agent Group Middleware
-Route::middleware(['auth','role:agent'])->group(function(){
-    Route::get('/agent/dashboard', [AgentController::class, 
-    'AgentDashboard'])->name('agent.dashboard');
-
-    Route::get('/agent/logout', [AgentController::class, 
-    'AgentLogout'])->name('agent.logout');
-
-});// End Group Agent Middleware
-
 //Student Group Middleware
 Route::middleware(['auth','role:student'])->group(function(){
+    
     Route::get('/student/dashboard', [studentController::class, 
     'StudentDashboard'])->name('student.dashboard');
 
@@ -71,9 +62,25 @@ Route::middleware(['auth','role:student'])->group(function(){
 
     Route::get('/student/apply', [studentController::class, 
     'StudentApply'])->name('student.apply');
-
+    
+    Route::get('/student/who_may_apply', [studentController::class, 
+    'StudentWho_may_apply'])->name('student.who_may_apply');
+    
 
 });// End Group Student Middleware
+
+//Agent Group Middleware
+Route::middleware(['auth','role:agent'])->group(function(){
+
+    Route::get('/agent/dashboard', [AgentController::class, 
+    'AgentDashboard'])->name('agent.dashboard');
+
+    Route::get('/agent/logout', [AgentController::class, 
+    'AgentLogout'])->name('agent.logout');
+
+});// End Group Agent Middleware
+
+
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 

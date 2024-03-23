@@ -11,8 +11,11 @@ use Illuminate\Http\RedirectResponse;
 class studentController extends Controller
 {
     public function studentDashboard(){
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+        return view('student.index', compact('profileData'));
 
-        return view('student.student_dashboard');
+        
     }// End Method
 
     public function studentlogout(Request $request): RedirectResponse
@@ -28,18 +31,21 @@ class studentController extends Controller
 
      public function StudentLogin(){
         return view('student.student_login');
-    }
+    }// End Method
 
     public function StudentProfile(){
         $id = Auth::user()->id;
         $profileData = User::find($id);
         return view('student.student_profile_view', compact('profileData'));
 
-    }// End Method
+    }// End Method   
 
      public function StudentApply(){
-        return view('student.index');
+        return view('student.student_apply');
+    }// End Method 
 
-        
-    }
+    public function StudentWho_may_apply(){
+        return view('student.who_may_apply');
+    }// End Method 
+
 }

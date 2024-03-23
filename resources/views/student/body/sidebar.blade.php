@@ -20,7 +20,7 @@
                         
                         <div id="dashboardDropdownContent" class="hidden   ml-5 right-0 mt-2 w-64 rounded-md shadow-lg bg-blue-800 ring-1 ring-black ring-opacity-10">
                             <div class="py-1">
-                                <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Main</li></a>
+                                <a href="{{ route('student.dashboard') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Main</li></a>
                                 <a href="{{ route('student.apply') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Apply</li></a>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
 
                         <div id="scholarshipDropdownContent" class="hidden origin-top-right  ml-10 right-0 mt-2 w-60 rounded-md shadow-lg bg-blue-800 ring-1 ring-black ring-opacity-5">
                             <div class="py-1">
-                                <a href="./whomayapply.php" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Who may apply?</li></a>
+                                <a href="{{ route('student.who_may_apply') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Who may apply?</li></a>
                                 <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Required Documents</li></a>
                             </div>
                         </div>
