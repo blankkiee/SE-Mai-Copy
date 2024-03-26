@@ -49,7 +49,8 @@
 
                     <h6 class="card-title">Update Student Profile</h6>
 
-                    <form class="forms-sample">
+                    <form method="POST" action="{{ route('student.profile.store') }}" enctype="multipart/form-data" class="forms-sample">
+                      @csrf
                         <div class="mb-3">
                             <label for="exampleInputUsername1" class="form-label text-black">Username</label>
                             <input type="text" name="username" class="form-control" id="exampleInputUsername1" 

@@ -12,10 +12,10 @@
                     <h2 class="text-4xl font-semibold mb-4 text-blue-500 flex justify-center">APPLICATION FORM</h2>
                     <p class="text-blue-500 text-xl pb-3">Please ensure that all required documents are submitted in PDF format. This will help us efficiently process your application. If you need to convert physical documents, make sure to save them as PDFs before uploading.</p>
 
-                    <form action="./stud-profile-pending.php" method="post" >
+                    <form action="{{ route('student.profile.store') }}" enctype="multipart/form-data" method="POST" >
+                        @csrf
                         <!-- enctype="multipart/form-data" -->
                       
-
                        <div class="mb-3 flex flex-col lg:flex-row space-y-3 lg:space-y-0">
                             <!-- Row 1 -->
                             <!-- Download Scholarship -->
@@ -97,12 +97,18 @@
                                         <h1 class="text-blue-500 font-light">FORM 137/138 FOR FIRST YEAR STUDENTS STUDENTS</h1>
                                     </label>
                                     
-                                    <input type="file" name="file2" id="file2" class="hidden">
+                                    <input type="file" name="file2" id="fileupload" class="hidden">
+                                    
                                     <label for="file2" class=" w-1/3 h-fit py-2 border  cursor-pointer bg-blue-900 text-white hover:bg-blue-600">
                                         <span class="text-sm flex justify-center ">ADD FILE </span>
                                     </label>
+                                                          
+                            </label>
                                 </div>
                             </div>
+<!-- not  -->
+                       
+    <!--end not  -->
                         </div>
                         <div class="mb-3 flex lg:flex-row flex-col space-y-3 lg:space-y-0">
                             <!-- Row 1 -->
@@ -184,7 +190,7 @@
 
                       
 
-                       
+
                     </form>
                 </div>
 
@@ -197,4 +203,16 @@
             <!-- </div> -->
         </div>
 
+        <script type="text/javascript">
+    $(document).ready(function(){
+        $('#fileupload').change(function(e){
+            var reader = new FileReader();
+            reader.onload = function(e){
+                $('#showImage').attr('src',e.target.result);
+            }
+            reader.readAsDataURL(e.target.files['0']);
+        });
+    });
+
+</script>
 @endsection
