@@ -23,41 +23,41 @@
 <!-- uncomment all <p> tag when database is fixed -->
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Student No.:</</label>
-                            <!-- <p class="text-muted">{{ $profileData->studentNumber }}</p>  -->
+                            <p class="text-muted">{{ $profileData-> student_no }}</p>
                             </div>
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Last Name</label>
-                            <!-- <p class="text-muted">{{ $profileData->lastName }}</p> -->
+                            <p class="text-muted">{{ $profileData->last_name }}</p>
                             </div>
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">First Name:</label>
-                            <!-- <p class="text-muted">{{ $profileData->firstName }}</p> -->
+                            <p class="text-muted">{{ $profileData->first_name }}
                             </div>
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Gender:</label>
-                            <!-- <p class="text-muted">{{ $profileData->gender }}</p> -->
+                            <p class="text-muted">{{ $profileData->gender }}
                             </div>
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Age:</</label>
-                            <!-- <p class="text-muted">{{ $profileData->age }}</p> -->
+                            <p class="text-muted">{{ $profileData->age }}</p>
                             </div>
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">College:</label>
-                            <!-- <p class="text-muted">{{ $profileData->college }}</p> -->
+                            <p class="text-muted">{{ $profileData->college }}</p>
                             </div>
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Course:</label>
-                            <!-- <p class="text-muted">{{ $profileData->course }}</p> -->
+                            <p class="text-muted">{{ $profileData->course }}</p>
                             </div>
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Year Level:</label>
-                            <!-- <p class="text-muted">{{ $profileData->yearLevel }}</p> -->
+                            <p class="text-muted">{{ $profileData->year_level }}</p>
                             </div>
 
                             <div class="mt-3">
@@ -72,12 +72,12 @@
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Current GWA:</label>
-                            <!-- <p class="text-muted">{{ $profileData->gwa }}</p> -->
+                            <p class="text-muted">{{ $profileData->current_gwa }}</p>
                             </div>
 
                             <div class="mt-3">
                             <label class="tx-11 fw-bolder mb-0 text-uppercase text-black">Household Income:</label>
-                            <!-- <p class="text-muted">{{ $profileData->houseHoldIncome }}</p> -->
+                            <p class="text-muted">{{ $profileData->household_income }}</p>
                             </div>
                             
                         </div>
