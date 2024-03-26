@@ -48,4 +48,9 @@ class studentController extends Controller
         return view('student.who_may_apply');
     }// End Method 
 
+    public function StudentAdditional_req(){
+
+        return view('student.additional_req');
+    }
+
 }

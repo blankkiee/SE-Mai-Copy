@@ -5,7 +5,7 @@
 //Its working perfectly fine without this but we may need this  -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<div class="col  max-h-screen ">
+<div class="col  max-h-screen mx-auto my-auto">
     <div class=" w-3/4 rounded-md  bg-white text-blue-800  font-semibold h-20 mx-auto mt-2 flex items-center justify-center text-5xl">
         <h1>STUDENT INFORMATION</h1>
     </div>

@@ -65,7 +65,9 @@ Route::middleware(['auth','role:student'])->group(function(){
     
     Route::get('/student/who_may_apply', [studentController::class, 
     'StudentWho_may_apply'])->name('student.who_may_apply');
-    
+
+    Route::get('/student/additional_req', [studentController::class, 
+    'StudentAdditional_req'])->name('student.additional_req');
 
 });// End Group Student Middleware
 

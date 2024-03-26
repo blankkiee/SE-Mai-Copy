@@ -3,7 +3,7 @@
 
 <!-- Content -->
         <!-- <div class=" bg-gray-200 mx-11 my-2 lg:mx-auto lg:my-auto h-4/5 lg:w-3/4 rounded-md shadow-2xl"> -->
-          <div class="p-10 h-5/6 bg-white rounded-md shadow-md lg:mx-auto mt-3 mx-3 lg:my-auto lg:w-3/4 ">
+          <div class="p-10 h-5/6 bg-white rounded-md shadow-md lg:mx-auto mt-auto mx-auto lg:my-auto lg:w-3/4 ">
             <div class="p-10 space-y-12  px-28">
                 <h1 class="m-0 p-0 text-4xl font-bold text-sky-700  ">PLM SCHOLARSHIP GRANT</h1>
                 <div class="mx-5 space-y-10">
