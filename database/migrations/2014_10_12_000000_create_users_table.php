@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('year_level')->nullable();
             $table->decimal('current_gwa', 4, 2)->nullable();
             $table->decimal('household_income', 10, 2)->nullable();
-            $table->enum('role',['admin','agent','user','student'])->default('user');
+            $table->enum('role',['admin','agent','opa','user','student',])->default('user');
             $table->enum('status',['active','inactive'])->default('active');
             $table->rememberToken();
             $table->timestamps();

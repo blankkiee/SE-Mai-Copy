@@ -60,6 +60,16 @@ class UsersTableSeeder extends Seeder
                 
             ],
 
+            [
+                'name' =>'Opa',
+                'username' => 'opa',
+                'email' => 'opa@gmail.com',
+                'password' => Hash::make('1111'),
+                'role' => 'opa',
+                'status' => 'active',
+                
+            ],
+
 
             ]);
 

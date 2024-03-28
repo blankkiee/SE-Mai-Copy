@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\studentController;
-
+use App\Http\Controllers\OpaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +93,16 @@ Route::middleware(['auth','role:agent'])->group(function(){
 
 });// End Group Agent Middleware
 
+Route::middleware(['auth','role:opa'])->group(function(){
+
+    Route::get('/opa/dashboard', [OpaController::class, 
+    'OpaDashboard'])->name('opa.dashboard');
+
+    Route::get('/opa/logout', [opaController::class, 
+    'OpaLogout'])->name('opa.logout');
+
+});
+
 
 
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
@@ -100,6 +110,8 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 Route::get('/agent/login', [AgentController::class, 'AgentLogin'])->name('agent.login');
 
 Route::get('/student/login', [studentController::class, 'StudentLogin'])->name('student.login');
+
+Route::get('/opa/login', [opaController::class, 'OpaLogin'])->name('opa.login');
 
 
 
