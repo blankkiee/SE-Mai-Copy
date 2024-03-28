@@ -7,6 +7,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use App\Models\File;
+use PhpParser\Node\Stmt\Echo_;
 
 class studentController extends Controller
 {
@@ -65,7 +67,7 @@ class studentController extends Controller
         if($request->file('photo')){
             $file = $request->file('photo');
             $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images'),$filename);
+            $file->move(public_path('upload/student_images'),$filename);
              $data->photo = $filename;
             // $data['photo']->$filename;
         }
@@ -74,25 +76,24 @@ class studentController extends Controller
         return redirect()->back();
     }
 
-    public function studentApplyStore(Request $request){
-        $id = Auth::user()->id;
-        $data = User::find($id);
-        $data->username = $request->username;
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->phone = $request->phone;
-        $data->address = $request->address;
+    
+    
+    public function uploadFile(Request $request){
+    if ($request->hasFile('file')) {
+        $file = $request->file('file');
+        $filename = $file->getClientOriginalName();
+        $file->move(public_path('upload/file_upload'), $filename); //lalagay sa upload na folder
+
+        $fileModel = new File();
+        $fileModel->filename = $filename;
+        $fileModel->path = 'upload/file_upload/' . $filename;  // save sa db
+        $fileModel->save();
+
         
-        if($request->file('photo')){
-            $file = $request->file('photo');
-            $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload/admin_images'),$filename);
-             $data->photo = $filename;
-            // $data['photo']->$filename;
-        }
-        $data->save();
+        return redirect()->route('student.dashboard');
         
-        return redirect()->back();
-    }
+    }  
+    return redirect()->back()->with('message', 'No file uploaded.'); 
+}
 
 }
