@@ -12,7 +12,7 @@
                     <h2 class="text-4xl font-semibold mb-4 text-blue-500 flex justify-center">APPLICATION FORM</h2>
                     <p class="text-blue-500 text-xl pb-3">Please ensure that all required documents are submitted in PDF format. This will help us efficiently process your application. If you need to convert physical documents, make sure to save them as PDFs before uploading.</p>
 
-                    <form action="{{ route('student.profile.store') }}" enctype="multipart/form-data" method="POST" >
+                    <form action="{{ route('student.apply.store') }}" enctype="multipart/form-data" method="POST" >
                         @csrf
                         <!-- enctype="multipart/form-data" -->
                       
@@ -163,21 +163,7 @@
 
                                    
 
-                                        <input type="hidden" name="studentNumber" value="<?php echo isset($_POST['studentNumber']) ? $_POST['studentNumber'] : ''; ?>">
-                                        <input type="hidden" name="gwa" value="<?php echo isset($_POST['gwa']) ? $_POST['gwa'] : ''; ?>">
-                                        <input type="hidden" name="firstname" value="<?php echo isset($_POST['firstname']) ? $_POST['firstname'] : ''; ?>">
-                                        <input type="hidden" name="middlename" value="<?php echo isset($_POST['middlename']) ? $_POST['middlename'] : ''; ?>">
-                                        <input type="hidden" name="lastname" value="<?php echo isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>">
-                                        <input type="hidden" name="gender" value="<?php echo isset($_POST['gender']) ? $_POST['gender'] : ''; ?>">
-
-                                        <input type="hidden" name="birthday" value="<?php echo isset($_POST['birthday']) ? $_POST['birthday'] : ''; ?>">
-                                        <input type="hidden" name="college" value="<?php echo isset($_POST['college']) ? $_POST['college'] : ''; ?>">
-                                        <input type="hidden" name="course" value="<?php echo isset($_POST['course']) ? $_POST['course'] : ''; ?>">
-                                        <input type="hidden" name="yearlevel" value="<?php echo isset($_POST['yearlevel']) ? $_POST['yearlevel'] : ''; ?>">
-                                        <input type="hidden" name="plmemail" value="<?php echo isset($_POST['plmemail']) ? $_POST['plmemail'] : ''; ?>">
-                                        <input type="hidden" name="mobilenumber" value="<?php echo isset($_POST['mobilenumber']) ? $_POST['mobilenumber'] : ''; ?>">
-                                        <input type="hidden" name="houseincome" value="<?php echo isset($_POST['houseincome']) ? $_POST['houseincome'] : ''; ?>">
-
+                                        
 
                                     <div class="mt-6 flex flex-row">
                                         <a href="./stud-applicationForm.php" class="w-full bg-gray-300 text-red-500 py-2 px-4 rounded-md hover:bg-gray-500">PREV</a>

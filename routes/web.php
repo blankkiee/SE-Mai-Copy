@@ -77,6 +77,9 @@ Route::middleware(['auth','role:student'])->group(function(){
     Route::post('/student/profile/store', [studentController::class, 
     'studentProfileStore'])->name('student.profile.store');
 
+    Route::post('/student/Apply/store', [studentController::class, 
+    'studentApplyStore'])->name('student.apply.store');
+
 });// End Group Student Middleware
 
 //Agent Group Middleware
