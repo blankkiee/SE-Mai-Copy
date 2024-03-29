@@ -78,22 +78,23 @@ class studentController extends Controller
 
     
     
-    public function uploadFile(Request $request){
-    if ($request->hasFile('file')) {
-        $file = $request->file('file');
-        $filename = $file->getClientOriginalName();
-        $file->move(public_path('upload/file_upload'), $filename); //lalagay sa upload na folder
+    public function uploadFile(Request $request)
+{
+    if ($request->hasFile('files')) {
+        foreach ($request->file('files') as $file) {
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path('upload/student_File_Uploads/'), $filename);
 
-        $fileModel = new File();
-        $fileModel->filename = $filename;
-        $fileModel->path = 'upload/file_upload/' . $filename;  // save sa db
-        $fileModel->save();
+            $fileModel = new File();
+            $fileModel->filename = $filename;
+            $fileModel->path = 'student_File_Uploads/' . $filename;
+            $fileModel->save();
+        }
 
-        
-        return redirect()->route('student.dashboard');
-        
-    }  
-    return redirect()->back()->with('message', 'No file uploaded.'); 
+         return redirect()->route('student.dashboard');
+    }
+
+    return redirect()->back()->with('message', 'No file uploaded.');
 }
 
 }
