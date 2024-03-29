@@ -53,7 +53,7 @@ class studentController extends Controller
     public function StudentAdditional_req(){
 
         return view('student.additional_req');
-    }
+    } // End Method 
 
     public function StudentProfileStore(Request $request){
         $id = Auth::user()->id;
@@ -74,7 +74,7 @@ class studentController extends Controller
         $data->save();
         
         return redirect()->back();
-    }
+    } // End Method 
 
     
     
@@ -89,19 +89,18 @@ class studentController extends Controller
             $fileModel->path = 'student_File_Uploads/' . $filename;
             $fileModel->save();
         }
-
          return redirect()->route('student.dashboard');
     }
-
     return redirect()->back()->with('message', 'No file uploaded.');
-    }
+    } // End Method 
 
 
-    public function StudentApplyStatus(Request $request){
+    public function StudentStatus(Request $request){
         $id = Auth::user()->id;
         $profileData = User::find($id);
-
-        return view('student.view_app_status', compact('profileData'));   
-    }
+        
+        return view('student.status',compact('profileData'));
+    }// End Method 
+    
 
 }

@@ -1,9 +1,9 @@
 @extends('student.student_dashboard')
 @section('student')
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-<div class="col  max-h-screen mx-auto my-auto">
+        <!-- Content -->
+        <div class="col  max-h-screen mx-auto my-auto">
     <div class=" w-3/4 rounded-md  bg-white text-blue-800  font-semibold h-20 mx-auto mt-2 flex items-center justify-center text-5xl">
         <h1>APPLICATION STATUS</h1>
     </div>
@@ -134,7 +134,7 @@
                     <input type="file" id="file3" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file4" class="block text-gray-700">PHOTOCOPY OF SINGLE PARENT ID OR COPY OF DEATH CERTIFICATE</label>
                     <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
@@ -160,6 +160,19 @@
 
     </div>
 </div>
+
+        <script>
+            // function not working hays
+    function onSubmit() {
+        // Display a JavaScript alert
+        alert('File uploaded successfully');
+
+        // Return true to submit the form
+        return true;
+    }
+</script>
+
+<!-- not working din potek yan -->
 <script type="text/javascript">
     $(document).ready(function(){
         $('#image').change(function(e){
@@ -172,5 +185,5 @@
     });
 
 </script>
-
- @endsection
+ 
+@endsection

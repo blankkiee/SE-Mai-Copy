@@ -22,7 +22,7 @@
                             <div class="py-1">
                                 <a href="{{ route('student.dashboard') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Main</li></a>
                                 <a href="{{ route('student.apply') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Apply</li></a>
-                                <a href="{{ route('student.apply.status') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>View Application Status</li></a>
+                                <a href="{{ route('student.status') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>View Application Status</li></a>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
         <!-- Content -->
-        <div class="flex bg-gray-200 mx-11 my-2 lg:mx-auto lg:my-auto h-fit lg:w-3/4 rounded-md shadow-2xl shadow-white">
+        <div class="flex bg-gray-200 mx-auto my-auto h-fit lg:w-3/4 rounded-md shadow-2xl shadow-white">
            
 
 
@@ -22,47 +22,47 @@
             @csrf
 
             <div class="grid grid-cols-2 gap-4">
-                <div>
-                    <label for="file1" class="block text-gray-700">Choose File 1</label>
+                <div class="border-solid border-2  border-yellow-500 bg-yellow-200 p-2">
+                    <label for="file1" class="block text-gray-700"> This is for download form</label>
                     <input type="file" id="file1" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
-                    <label for="file2" class="block text-gray-700">Choose File 2</label>
+                <div class="border-solid border-2  border-yellow-500 bg-yellow-200 p-2">
+                    <label for="file2" class="block text-gray-700">SCHOLARSHIP FORM WITH 2X2 PICTURE</label>
                     <input type="file" id="file2" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
-                    <label for="file3" class="block text-gray-700">Choose File 3</label>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                    <label for="file3" class="block text-gray-700">PLM DOWNLOADED GRADES FOR OLD STUDENTS OR FORM 137/138 FOR FIRST FIRST STUDENTS </label>
                     <input type="file" id="file3" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
-                    <label for="file4" class="block text-gray-700">Choose File 4</label>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                    <label for="file4" class="block text-gray-700">CCERTIFICATE OF GOOD MORAL CHARACTER FOR STUDENTS & SHS FOR FIRST YEAR LEVELS</label>
                     <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
-                    <label for="file3" class="block text-gray-700">Choose File 5</label>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                    <label for="file3" class="block text-gray-700">PARENTS INCOME TAX RETURN, CERT FOR FILLING OF INCOME TAX FROM BIR</label>
                     <input type="file" id="file3" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
-                    <label for="file4" class="block text-gray-700">Choose File 6</label>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                    <label for="file4" class="block text-gray-700">OPEN LETTER STATING THE REASON WHY STUDENT NEED TO AVAIL A SCHOLARSHIP PROGRAM</label>
                     <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
-                <div>
-                    <label for="file4" class="block text-gray-700">Choose File 4</label>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                    <label for="file4" class="block text-gray-700">PLM ID PHOTOCOPY,ENROLLMENT REGISTRATION FORM</label>
                     <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
-                    <label for="file3" class="block text-gray-700">Choose File 5</label>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                    <label for="file3" class="block text-gray-700">BARANGAY CERTIFICATE OF RESIDENCY FOR STUDENT</label>
                     <input type="file" id="file3" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div>
-                    <label for="file4" class="block text-gray-700">Choose File 6</label>
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                    <label for="file4" class="block text-gray-700">PHOTOCOPY OF SINGLE PARENT ID OR COPY OF DEATH CERTIFICATE</label>
                     <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
             <div class="grid grid-cols-2 gap-4">
@@ -77,7 +77,7 @@
     
 
     <!-- end  -->
-                </div>
+            </div>
 
      
         </div>
