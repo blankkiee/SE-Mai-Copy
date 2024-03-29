@@ -68,6 +68,9 @@ Route::middleware(['auth','role:student'])->group(function(){
     Route::get('/student/apply', [studentController::class, 
     'StudentApply'])->name('student.apply');
     
+    Route::get('/student/apply/status', [studentController::class, 
+    'StudentApplyStatus'])->name('student.apply.status');
+
     Route::get('/student/who_may_apply', [studentController::class, 
     'StudentWho_may_apply'])->name('student.who_may_apply');
 
@@ -80,6 +83,9 @@ Route::middleware(['auth','role:student'])->group(function(){
     Route::post('/upload/file', [studentController::class, 
     'uploadFile'])->name('upload.file');
 
+
+
+    
 });// End Group Student Middleware
 
 //Agent Group Middleware

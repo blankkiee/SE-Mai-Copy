@@ -68,7 +68,7 @@ class studentController extends Controller
             $file = $request->file('photo');
             $filename = date('YmdHi').$file->getClientOriginalName();
             $file->move(public_path('upload/student_images'),$filename);
-             $data->photo = $filename;
+            $data->photo = $filename;
             // $data['photo']->$filename;
         }
         $data->save();
@@ -78,8 +78,7 @@ class studentController extends Controller
 
     
     
-    public function uploadFile(Request $request)
-{
+    public function uploadFile(Request $request){
     if ($request->hasFile('files')) {
         foreach ($request->file('files') as $file) {
             $filename = $file->getClientOriginalName();
@@ -95,6 +94,14 @@ class studentController extends Controller
     }
 
     return redirect()->back()->with('message', 'No file uploaded.');
-}
+    }
+
+
+    public function StudentApplyStatus(Request $request){
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
+
+        return view('student.view_app_status', compact('profileData'));   
+    }
 
 }
