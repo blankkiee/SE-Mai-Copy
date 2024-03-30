@@ -21,6 +21,14 @@ return new class extends Migration
             $table->string('password');
             $table->string('address')->nullable();
             $table->string('photo')->nullable();
+            $table->string('grade_file')->nullable();
+            $table->string('form_with_pic')->nullable();
+            $table->string('gmc_cert')->nullable();
+            $table->string('tax')->nullable();
+            $table->string('reason_letter')->nullable();
+            $table->string('id_reg_form')->nullable();
+            $table->string('brg_cert')->nullable();
+            $table->string('single_parent_id')->nullable();
             $table->string('phone')->nullable();
             $table->string('student_no')->nullable();
             $table->string('last_name')->nullable();

@@ -102,45 +102,46 @@
 
                 <div class="border-solid border-2  border-yellow-500 bg-yellow-200">
                     <label for="file2" class="block text-gray-700">SCHOLARSHIP FORM WITH 2X2 PICTURE</label>
-                    <input type="file" id="file2" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file2" value="{{ $profileData->form_with_pic }}" name="" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    
                 </div>
 
                 <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file3" class="block text-gray-700">PLM DOWNLOADED GRADES FOR OLD STUDENTS OR FORM 137/138 FOR FIRST FIRST STUDENTS </label>
-                    <input type="file" id="file3" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file3" value="{{ $profileData->grade_file }}" name="grades" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
                 <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file4" class="block text-gray-700">CCERTIFICATE OF GOOD MORAL CHARACTER FOR STUDENTS & SHS FOR FIRST YEAR LEVELS</label>
-                    <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file4" value="{{ $profileData->gmc_cert }}" name="files" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
                 <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file3" class="block text-gray-700">PARENTS INCOME TAX RETURN, CERT FOR FILLING OF INCOME TAX FROM BIR</label>
-                    <input type="file" id="file3" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file3" value="{{ $profileData->tax }}" name="files" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
                 <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file4" class="block text-gray-700">OPEN LETTER STATING THE REASON WHY STUDENT NEED TO AVAIL A SCHOLARSHIP PROGRAM</label>
-                    <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file4" value="{{ $profileData->reason_letter }}" name="files" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
                 <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file4" class="block text-gray-700">PLM ID PHOTOCOPY,ENROLLMENT REGISTRATION FORM</label>
-                    <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file4" value="{{ $profileData->id_reg_form }}" name="files" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
                 <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file3" class="block text-gray-700">BARANGAY CERTIFICATE OF RESIDENCY FOR STUDENT</label>
-                    <input type="file" id="file3" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file3" value="{{ $profileData->brg_cert }}" name="files" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
                 <div class="border-solid border   bg-blue-50 rounded-lg p-1">
                     <label for="file4" class="block text-gray-700">PHOTOCOPY OF SINGLE PARENT ID OR COPY OF DEATH CERTIFICATE</label>
-                    <input type="file" id="file4" name="files[]" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                    <input type="text" id="file4" value="{{ $profileData->single_parent_id }}" name="files" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
-            <div class="grid grid-cols-2 gap-4">
-                <button type="" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 w-full">Back</button>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 w-full">Upload</button>
+            <div class="grid grid-cols-1 gap-4">
+                <a href="{{ route('student.apply') }}" class="flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white text-2xl font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 w-full">Back</a>
+                <!-- <button type="" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 w-full">Upload</button> -->
 
             </div>
 

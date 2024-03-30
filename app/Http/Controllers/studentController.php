@@ -79,19 +79,25 @@ class studentController extends Controller
     
     
     public function uploadFile(Request $request){
-    if ($request->hasFile('files')) {
-        foreach ($request->file('files') as $file) {
-            $filename = $file->getClientOriginalName();
-            $file->move(public_path('upload/student_File_Uploads/'), $filename);
+        $id = Auth::user()->id;
+        $data = User::find($id);
+        
+        $fields = ['grade_file' => 'grade_file', 'gmc_cert' => 'gmc_cert', 'tax' => 'tax', 
+        'reason_letter'=>'reason_letter', 'id_reg_form'=>'id_reg_form', 
+        'form_with_pic' => 'form_with_pic', 'single_parent_id'=>'single_parent_id', 'brg_cert'=>'brg_cert'];
 
-            $fileModel = new File();
-            $fileModel->filename = $filename;
-            $fileModel->path = 'student_File_Uploads/' . $filename;
-            $fileModel->save();
+        foreach ($fields as $field => $fileKey) {
+            if($request->hasFile($fileKey)){
+                $file = $request->file($fileKey);
+                $filename = date('YmdHi').$file->getClientOriginalName();
+                $file->move(public_path('upload/student_File_Uploads'),$filename);
+                $data->{$field} = $filename;
+            }
         }
-         return redirect()->route('student.dashboard');
-    }
-    return redirect()->back()->with('message', 'No file uploaded.');
+        
+        $data->save();
+        
+        return redirect()->back();
     } // End Method 
 
 
@@ -104,3 +110,18 @@ class studentController extends Controller
     
 
 }
+//  public function uploadFile(Request $request){
+//     if ($request->hasFile('files')) {
+//         foreach ($request->file('files') as $file) {
+//             $filename = $file->getClientOriginalName();
+//             $file->move(public_path('upload/student_File_Uploads/'), $filename);
+
+//             $fileModel = new File();
+//             $fileModel->filename = $filename;
+//             $fileModel->path = 'student_File_Uploads/' . $filename;
+//             $fileModel->save();
+//         }
+//          return redirect()->route('student.dashboard');
+//     }
+//     return redirect()->back()->with('message', 'No file uploaded.');
+//     } // End Method 
