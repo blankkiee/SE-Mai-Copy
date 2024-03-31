@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Hash;
 use App\Models\File;
 use PhpParser\Node\Stmt\Echo_;
 
@@ -66,6 +67,7 @@ class studentController extends Controller
         
         if($request->file('photo')){
             $file = $request->file('photo');
+            @unlink(public_path('upload/student_images/'.$data->photo));
             $filename = date('YmdHi').$file->getClientOriginalName();
             $file->move(public_path('upload/student_images'),$filename);
             $data->photo = $filename;
@@ -102,7 +104,12 @@ class studentController extends Controller
         
         $data->save();
         
-        return redirect()->back();
+        $notification = array(
+            'message' => 'Files Uploaded Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
     } // End Method 
 
 
@@ -114,19 +121,50 @@ class studentController extends Controller
     }// End Method 
     
 
-}
-//  public function uploadFile(Request $request){
-//     if ($request->hasFile('files')) {
-//         foreach ($request->file('files') as $file) {
-//             $filename = $file->getClientOriginalName();
-//             $file->move(public_path('upload/student_File_Uploads/'), $filename);
+    public function StudentChangePassword(){
+        
+        $id = Auth::user()->id;
+        $profileData = User::find($id);
 
-//             $fileModel = new File();
-//             $fileModel->filename = $filename;
-//             $fileModel->path = 'student_File_Uploads/' . $filename;
-//             $fileModel->save();
-//         }
-//          return redirect()->route('student.dashboard');
-//     }
-//     return redirect()->back()->with('message', 'No file uploaded.');
-//     } // End Method 
+        return view('student.student_change_password', compact('profileData'));
+    }
+
+
+    public function StudentUpdatePassword(Request $request){
+
+        //validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed' 
+        ]);
+
+        /// Match the old Password
+
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+            
+            $notification = array(
+            'message' => 'Old Password Does not Match!',
+            'alert-type' => 'error' 
+        );
+
+        return back()->with($notification);
+        }
+
+        /// Update The New Password
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->new_password)
+        ]);
+
+        $notification = array(
+            'message' => 'Password Change Successfully!',
+            'alert-type' => 'success' 
+        );
+
+        return back()->with($notification);
+        
+      
+
+    }//End Method
+    
+}
+

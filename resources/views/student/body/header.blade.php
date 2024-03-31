@@ -37,7 +37,7 @@
         <!-- Content -->
         <div id="profileDropdownContent" class="hidden lg:absolute lg:mr-11 lg:right-0 lg:top-20 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
             <div class="py-1">
-                <a href="{{ route('student.profile') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><li>Settings</li></a>
+                <a href="{{ route('student.change.password') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><li>Change Password</li></a>
                 <a href="{{ route('student.logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><li>Log out</li></a>
             </div>
         </div>
