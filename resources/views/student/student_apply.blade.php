@@ -18,7 +18,7 @@
         
         
 
-        <form action="{{ route('upload.file') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('upload.file') }}" method="post" enctype="multipart/form-data" class="text-gray-500">
             @csrf
 
             <div class="grid grid-cols-2 gap-4">
@@ -37,7 +37,7 @@
                     <input type="file" id="file3" name="grade_file" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
 
-                <div class="border-solid border   bg-blue-50 rounded-lg p-2">
+                <div class="border-solid border   bg-blue-50 rounded-lg p-2 ">
                     <label for="file4" class="block text-gray-700">CCERTIFICATE OF GOOD MORAL CHARACTER FOR STUDENTS & SHS FOR FIRST YEAR LEVELS</label>
                     <input type="file" id="file4" name="gmc_cert" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
@@ -66,7 +66,7 @@
                     <input type="file" id="file4" name="single_parent_id" multiple class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                 </div>
             <div class="grid grid-cols-2 gap-4">
-                <a href="{{ route('student.status') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 w-full">Go to View Application Status to see uploaded files</a>
+                <a href="{{ route('student.status') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 w-full text-center"> View Application Status to see uploaded files</a>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4 w-full">Upload</button>
 
             </div>
