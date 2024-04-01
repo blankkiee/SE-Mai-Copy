@@ -48,15 +48,19 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::post('/admin/profile/store', [AdminController::class, 
     'AdminProfileStore'])->name('admin.profile.store');
-
+    
     Route::get('/admin/change/password', [AdminController::class, 
     'AdminChangePassword'])->name('admin.change.password');
 
-     Route::post('/admin/update/password', [AdminController::class, 
+    Route::post('/admin/update/password', [AdminController::class, 
     'AdminUpdatePassword'])->name('admin.update.password');
 
+    // for opening files sent from students pov (??)
+    Route::get('/admin/students', 'Admin\StudentController@index')->name('admin.students.index');
+        
+    Route::get('/admin/students/{id}/documents', 'Admin\studentController@showDocuments')->name('admin.students.documents');
 
-    
+
 });// End Group Admin Middleware
 
 //Student Group Middleware
