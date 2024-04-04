@@ -55,8 +55,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::post('/admin/update/password', [AdminController::class, 
     'AdminUpdatePassword'])->name('admin.update.password');
 
-
-    
 });// End Group Admin Middleware
 
 //Student Group Middleware
@@ -100,16 +98,29 @@ Route::middleware(['auth','role:student'])->group(function(){
 
 });// End Group Student Middleware
 
-
-
 //Agent Group Middleware
 Route::middleware(['auth','role:agent'])->group(function(){
 
-    Route::get('/agent/dashboard', [AgentController::class, 
+    Route::get('/agent/landingpage', [AgentController::class, 
     'AgentDashboard'])->name('agent.dashboard');
 
     Route::get('/agent/logout', [AgentController::class, 
     'AgentLogout'])->name('agent.logout');
+
+    Route::get('/agent/index', [AgentController::class, 
+    'AgentLstOfStdnts'])->name('agent.lstofstdnts');
+
+    Route::get('/agent/pending', [AgentController::class, 
+    'AgentPending'])->name('agent.pending');
+
+    Route::get('/agent/completedreq', [AgentController::class, 
+    'AgentCompletedReq'])->name('agent.completedreq');
+
+    Route::get('/agent/candidatestudent', [AgentController::class, 
+    'AgentCandidateStdnt'])->name('agent.candidatestdnt');
+
+    Route::get('/agent/scholars', [AgentController::class, 
+    'AgentScholars'])->name('agent.scholars');
 
 });// End Group Agent Middleware
 
