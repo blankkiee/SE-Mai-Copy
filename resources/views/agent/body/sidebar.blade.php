@@ -21,10 +21,10 @@
                         <div id="dashboardDropdownContent" class="hidden   ml-5 right-0 mt-2 w-64 rounded-md shadow-lg bg-blue-800 ring-1 ring-black ring-opacity-10">
                             <div class="py-1">
                                 <a href="{{ route('student.dashboard') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>List of Student</li></a>
-                                <a href="{{ route('student.apply') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Pending</li></a>
-                                <a href="{{ route('student.status') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>ompleted Requirements</li></a>
-                                <a href="{{ route('student.apply') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Candidate Student</li></a>
-                                <a href="{{ route('student.apply') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Scholars</li></a>
+                                <a href="" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Pending</li></a>
+                                <a href="" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>ompleted Requirements</li></a>
+                                <a href="" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Candidate Student</li></a>
+                                <a href="" class="block px-4 py-2 text-sm text-white hover:bg-blue-700"><li>Scholars</li></a>
 
                             </div>
                         </div>
