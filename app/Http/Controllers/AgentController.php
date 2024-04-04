@@ -10,7 +10,7 @@ class AgentController extends Controller
 {
      public function AgentDashboard(){
 
-        return view('agent.agent_dashboard');
+        return view('agent.agent_landingpage');
     }// End Method
 
     public function agentlogout(Request $request): RedirectResponse
@@ -26,5 +26,25 @@ class AgentController extends Controller
 
      public function AgentLogin(){
         return view('agent.agent_login');
-    }
+    }// End Method
+
+    public function AgentLstOfStdnts(){
+        return view('agent.index');
+    }// End Method
+
+    public function AgentPending(){
+        return view('agent.agent_pending');
+    }// End Method 
+
+    public function AgentCompletedReq(){
+        return view('agent.agent_completedreq');
+    }// End Method 
+
+    public function AgentCandidateStdnt(){
+        return view('agent.agent_candidatestudent');
+    }// End Method 
+
+    public function AgentScholars(){
+        return view('agent.agent_scholars');
+    }// End Method 
 }

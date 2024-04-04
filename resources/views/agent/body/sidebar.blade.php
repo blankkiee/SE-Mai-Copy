@@ -34,19 +34,19 @@
 
                             <div id="candidateDropdownContent" class="hidden origin-top-right ml-10 right-0 mt-2 w-60 rounded-md shadow-lg bg-blue-800 ring-1 ring-black ring-opacity-5">
                                 <div class="py-1">
-                                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('List of Students', 'btnListofStuds')">
+                                    <a href="{{ route('agent.lstofstdnts') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('List of Students', 'btnListofStuds')">
                                         <li>List of Students</li>
                                     </a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Pending', 'btnPending')">
+                                    <a href="{{ route('agent.pending') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Pending', 'btnPending')">
                                         <li>Pending</li>
                                     </a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Completed Requirements', 'btnCompletedReqs')">
+                                    <a href="{{ route('agent.completedreq') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Completed Requirements', 'btnCompletedReqs')">
                                         <li>Completed Requirements</li>
                                     </a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Candidate Students', 'btnCandidateStuds')">
+                                    <a href="{{ route('agent.candidatestdnt) }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Candidate Students', 'btnCandidateStuds')">
                                         <li>Candidate Students</li>
                                     </a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Scholars', 'btnScholar')">
+                                    <a href="{{ route('agent.scholars') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Scholars', 'btnScholar')">
                                         <li>Scholars</li>
                                     </a>
                                 </div>
