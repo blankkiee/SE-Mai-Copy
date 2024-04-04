@@ -1,7 +1,6 @@
 @extends('agent.agent_dashboard')
 @section('agent')
 
-<!-- Content -->
 <div class="bg-white mx-11 my-2 lg:mx-auto lg:my-auto h-5/6 lg:w-3/4 rounded-md shadow-2xl">
     <div class="p-5 grid grid-cols-5 gap-1 justify-center">
         <button id="btnListofStuds" class="col-span-1 bg-yellow-100 p-2 rounded-md shadow-md text-yellow-400 text-center font-bold hover:bg-yellow-100 transition" onclick="changeContent('List of Students', this)">List of Students</button>
@@ -11,7 +10,7 @@
         <button id="btnScholar" class="col-span-1 bg-white p-2 rounded-md text-yellow-400 text-center font-bold hover:bg-yellow-100 transition" onclick="changeContent('Scholars', this)">Scholars</button>
     </div>
     <div id="contentContainer">
-        <div id="studentListContent">
+        <div id="pendingContent" style="display: none;">
             <div class="grid grid-cols-3 gap-4 pl-7 pr-5">
                 <!-- Search student -->
                 <div class="col-span-1 flex items-center">
@@ -29,25 +28,11 @@
                         <option value="1">Option 1</option>
                         <option value="2">Option 2</option>
                         <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                        <option value="5">Option 5</option>
+                        <option value="6">Option 6</option>
+                        <option value="7">Option 7</option>
                     </select>
-                </div>
-                <!-- Reset button -->
-                <div class="col-span-1 flex items-center justify-end pr-12">
-                    <button id="resetButton" class="bg-red-500 text-white py-2 px-3 rounded-md sm:text-xs hover:bg-red-600 transition">RESET</button>
-                </div>
-
-                <div id="confirmationDialog" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
-                    <div class="flex items-center justify-center h-screen">
-                        <div class="bg-white shadow-md rounded-md p-10 relative">
-                            <span class="cursor-pointer absolute top-2 right-5 text-gray-500" onclick="closeDialog()">x</span>
-                            <p class="sm:text-sm font-semibold ml-6 mR-5">Are you sure you want to delete the entire</p>
-                            <p class="sm:text-sm ml-6 mb-2 mr-5 font-semibold">student list? Type <span class="text-yellow-400 font-bold">"CONFIRM"</span> to continue.</p>
-                            <input type="text" id="confirmationInput" class="border border-gray-900 py-1.5 px-1 w-64 sm:text-xs mb-2 ml-6 mr-5">
-                            <div class="flex justify-center">
-                                <button class="bg-red-500 text-white py-2 px-9 shadow-sm rounded-lg font-semibold sm:text-sm hover:bg-red-600 transition" onclick="confirmAction()">DONE</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class>
@@ -57,10 +42,10 @@
                         </div>
                     </div>
                 </section>
-                <div class="grid grid-cols-2 px-2 py-1 mx-7 bg-gray-200 h-8 w-auto rounded-md">
+                <div class="grid grid-cols-2 mt-5 px-2 py-1 mx-7 bg-gray-200 h-8 w-auto rounded-md">
                     <div class="cols-span-1">
                         <p class="text-gray-500 sm:text-xs pt-1">
-                            1 - 9 of 2
+                            1 - 7 of 2
                         </p>
                     </div>
                     <div class="cols-span-1 flex items-center justify-end">
@@ -170,34 +155,92 @@
     }
 </script>
 
-<!-- script for deleting the entire student list -->
+<!-- script for viewing student info -->
 <script>
-    // Function to show the dialog box
-    function showDialog() {
-        var confirmationInput = document.getElementById('confirmationInput');
-        confirmationInput.value = ''; // Clear the text box
-        document.getElementById('confirmationDialog').classList.remove('hidden');
+    // Function to show the student dialog
+    function showStudentDialog() {
+        document.getElementById('studentDialog').classList.remove('hidden');
     }
 
-    // Function to close the dialog box
-    function closeDialog() {
-        document.getElementById('confirmationDialog').classList.add('hidden');
-    }
+    // Function to close the student dialog
+    function closeStudentDialog() {
+        var studentDialog = document.getElementById('studentDialog');
+        studentDialog.classList.add('hidden');
 
-    // Function to confirm the action
-    function confirmAction() {
-        var inputText = document.getElementById('confirmationInput').value.trim();
-        if (inputText === 'CONFIRM') {
-            // Perform the reset or delete action here
-            alert('Student list deleted.'); // Replace with your actual action
-            closeDialog();
-        } else {
-            alert('Invalid confirmation. Please type "CONFIRM" to proceed.');
+        // Deselect all radio buttons
+        var options = document.querySelectorAll('#approvalOptions input[type="radio"]');
+        options.forEach(option => {
+            option.checked = false;
+        });
+
+        // Clear highlighting from all option divs
+        var optionDivs = document.querySelectorAll('#approvalOptions div');
+        optionDivs.forEach(optionDiv => {
+            optionDiv.classList.remove('bg-yellow-100', 'hover:bg-yellow-100');
+        });
+
+        // Hide specific content for each option
+        var approveContent = document.getElementById('approveContent');
+        var resubmitContent = document.getElementById('resubmitContent');
+        var disapproveContent = document.getElementById('disapproveContent');
+
+        approveContent.style.display = 'none';
+        resubmitContent.style.display = 'none';
+        disapproveContent.style.display = 'none';
+
+        // Display the default content
+        var defaultContent = document.getElementById('defaultContent');
+        defaultContent.style.display = 'block';
+
+        // Disable the submit button
+        var submitButton = document.getElementById('submitButton');
+        submitButton.disabled = true;
+    }
+</script>
+
+<!--script for the remarks radio buttons in Pending section - Viewing student info feature -->
+<script>
+    function handleOptionChange(radioButton) {
+        var contentContainer = document.getElementById('contentContainer');
+        var approveContent = document.getElementById('approveContent');
+        var resubmitContent = document.getElementById('resubmitContent');
+        var disapproveContent = document.getElementById('disapproveContent');
+        var defaultContent = document.getElementById('defaultContent');
+        var submitButton = document.getElementById('submitButton');
+
+        approveContent.style.display = 'none';
+        resubmitContent.style.display = 'none';
+        disapproveContent.style.display = 'none';
+        defaultContent.style.display = 'none';
+
+        var options = document.querySelectorAll('#approvalOptions div');
+        options.forEach(optionDiv => {
+            optionDiv.classList.remove('bg-yellow-100', 'hover:bg-yellow-100');
+        });
+
+        var optionDiv = radioButton.parentNode;
+        optionDiv.classList.add('bg-yellow-100');
+
+        var optionValue = radioButton.value;
+        switch (optionValue) {
+            case 'approve':
+                approveContent.style.display = 'block';
+                break;
+            case 'resubmit':
+                resubmitContent.style.display = 'block';
+                break;
+            case 'disapprove':
+                disapproveContent.style.display = 'block';
+                break;
+            default:
+                defaultContent.style.display = 'block';
+                break;
         }
-    }
 
-    // Event listener for the reset button
-    document.getElementById('resetButton').addEventListener('click', showDialog);
+        // Enable submit button when an option is selected
+        submitButton.disabled = false;
+        submitButton.classList.remove('cursor-not-allowed');
+    }
 </script>
 
 @endsection

@@ -98,8 +98,6 @@ Route::middleware(['auth','role:student'])->group(function(){
 
 });// End Group Student Middleware
 
-
-
 //Agent Group Middleware
 Route::middleware(['auth','role:agent'])->group(function(){
 
