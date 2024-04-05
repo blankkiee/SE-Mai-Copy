@@ -72,12 +72,8 @@
             dropdownContent.classList.toggle('hidden');
         }
 
-        document.getElementById('dashboardDropdown').addEventListener('click', function() {
-            toggleDropdown('dashboardDropdown', 'dashboardDropdownContent');
-        });
-
-        document.getElementById('scholarshipDropdown').addEventListener('click', function() {
-            toggleDropdown('scholarshipDropdown', 'scholarshipDropdownContent');
+        document.getElementById('candidateDropdown').addEventListener('click', function() {
+            toggleDropdown('candidateDropdown', 'candidateDropdownContent');
         });
         document.getElementById('profileDropdown').addEventListener('click', function() {
             toggleDropdown('profileDropdown', 'profileDropdownContent');
