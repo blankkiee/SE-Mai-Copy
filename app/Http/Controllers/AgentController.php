@@ -5,13 +5,63 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use App\Models\User;
+use App\Models\Pending;
 
 class AgentController extends Controller
 {
      public function AgentDashboard(){
+        $userData = User::all(); 
 
-        return view('agent.index');
+        return view('agent.index', compact('userData'));
     }// End Method
+
+    
+
+  public function AgentViewFiles(Request $request) {
+    $id = $request->input('selected_users');
+    $userData = Pending::find($id);
+    
+    return view('agent.agent_pending', compact('userData'));
+}
+
+
+
+
+    
+
+public function moveSelectedRows(Request $request)
+{
+    // kukuha ng ID
+    $selectedIds = $request->input('selected_users');
+
+    // punta sa "pending" table
+    foreach ($selectedIds as $id) {
+        $user = User::find($id);
+
+        if ($user) {
+            // dadalhin mo yung existing row sa "pending" table
+            Pending::updateOrCreate(
+                ['id' => $id],
+                [
+                    'name' => $user->name,
+                    'year' => $user->year,
+                    'course' => $user->course,
+                    'phone' => $user->phone,
+                    'gwa' => $user->gwa,
+                    'parents_income' => $user->parents_income,
+                ]
+            );
+
+            // uncomment mo pag gusto mo idelete sa pinanggalingan na table
+            // $user->delete();
+        }
+    }
+
+    return redirect()->back()->with('success', 'Selected rows moved successfully.');
+}// End Method
+
+
 
     public function agentlogout(Request $request): RedirectResponse
     {
@@ -33,7 +83,11 @@ class AgentController extends Controller
     }// End Method
 
     public function AgentPending(){
-        return view('agent.agent_pending');
+ 
+       $userData = Pending::all(); 
+
+        return view('agent.agent_pending', compact('userData'));
+        
     }// End Method 
 
     public function AgentCompletedReq(){

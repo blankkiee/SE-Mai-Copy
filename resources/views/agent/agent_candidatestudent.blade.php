@@ -1,41 +1,142 @@
 @extends('agent.agent_landingpage')
 @section('agent')
 
-<div class="bg-white mx-11 my-2 lg:mx-auto lg:my-auto h-5/6 lg:w-3/4 rounded-md shadow-2xl">
-    <div class="p-5 grid grid-cols-5 gap-1 justify-center">
-        <a href="{{ route('agent.lstofstdnts') }}" button id="btnListofStuds" class="col-span-1 bg-yellow-100 p-2 rounded-md shadow-md text-yellow-400 text-center font-bold hover:bg-yellow-100 transition" onclick="changeContent('List of Students', this)">List of Students</button>
-        <a href="{{ route('agent.pending') }}" button id="btnPending" class="col-span-1 bg-white p-2 rounded-md text-yellow-400 text-center font-bold hover:bg-yellow-100 transition" onclick="changeContent('Pending', this)">Pending</button>
-        <a href="{{ route('agent.completedreq') }}" button id="btnCompletedReqs" class="col-span-1 bg-white p-2 rounded-md text-yellow-400 text-center font-bold hover:bg-yellow-100 transition" onclick="changeContent('Completed Requirements', this)">Completed Requirements</button>
-        <a href="{{ route('agent.candidatestdnt') }}" button id="btnCandidateStuds" class="col-span-1 bg-white p-2 rounded-md text-yellow-400 text-center font-bold hover:bg-yellow-100 transition" onclick="changeContent('Candidate Students', this)">Candidate Students</button>
-        <a href="{{ route('agent.scholars') }}" button id="btnScholar" class="col-span-1 bg-white p-2 rounded-md text-yellow-400 text-center font-bold hover:bg-yellow-100 transition" onclick="changeContent('Scholars', this)">Scholars</button>
-    </div>
-    <div id="contentContainer">
-        <div id="candidateStudentsContent" style="display: none;">
-            <div class="grid grid-cols-3 gap-4 pl-7 pr-5">
-                <div class="col-span-1 px-2">
-                    <select class="border p-2 sm:text-xs w-full">
-                        <option disabled selected class="text-gray-400">Select Scholarship</option>
-                        <!-- Add other options here -->
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                    </select>
-                </div>
-                <!-- Date of Becoming a Scholar -->
-                <div class="relative col-span-1 flex items-center">
-                    <label class="mr-2 sm:text-xs">Date of Becoming a Scholar:</label>
-                    <div class="relative">
-                        <input type="text" placeholder="mm/dd/yyyy" class="border p-2 sm:text-xs w-32">
-                        <button class="absolute top-0 right-0 m-2 bg-white p-1">
-                            <img width="20" height="20" style="margin-top: -5px;" src="https://img.icons8.com/ios/50/calendar--v1.png" alt="calendar--v1" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+
+     
             <div class>
                 <section class="container mx-auto px-7">
                     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                         <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
                             <!-- insert table -->
+                            <table class="min-w-full leading-normal">
+                                            <thead>
+                                                <tr>
+                                                    <th class="px-3 py-3 border-b-2 border-gray-200 bg-gray-100 text-center sm:text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">
+                                                        #
+                                                    </th>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center sm:text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">
+                                                        Student Name
+                                                    </th>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center sm:text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">
+                                                        Student Number
+                                                    </th>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-cengter sm:text-xs font-semibold text-gray-600 uppercase tracking-wider whitespace-nowrap">
+                                                        Status
+                                                    </th>
+                                                    <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-center sm:text-xs font-semibold text-gray-600 uppercase tracking-wider  whitespace-nowrap">
+                                                        
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="p-1 border-b border-gray-200 bg-white sm:text-xs text-center">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            1
+                                                        </p>    
+                                                    </td>
+                                                    <td class="p-1 border-b border-gray-200 bg-white sm:text-xs text-center">
+                                                        <p class="text-gray-900 whitespace-no-wrap">
+                                                            Calinao, Mara
+                                                        </p>    
+                                                    </td>
+                                                    <td class="p-1 border-b border-gray-200 bg-white sm:text-xs text-center">
+                                                            <p class="text-gray-900 whitespace-no-wrap">
+                                                                2021-23456
+                                                            </p>
+                                                    </td>
+                                                    <td class="border-b border-gray-200 bg-white sm:text-xs uppercase text-center">
+                                                            <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                                                <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                                                <span class="relative">APPROVED</span>
+                                                            </span>
+                                                    </td>
+                                                    <td class="p-1 border-b border-gray-200 bg-white sm:text-xs text-center">
+                                                        <button class="bg-yellow-400 text-white py-1 px-7 sm:text-xs hover:bg-yellow-600 transition flex items-center mx-auto">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                                                                style="fill:#000000;" class="pr-1">
+                                                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" 
+                                                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" 
+                                                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                                                <g transform="scale(10.66667,10.66667)">
+                                                                <path d="M4,4c-1.09425,0 -2,0.90575 -2,2v12c0,1.09426 0.90575,2 2,2h16c1.09426,0 2,-0.90574 2,-2v-10c0,-1.09425 -0.90574,-2 -2,-2h-8l-2,-2zM4,6h5.17188l2,2h8.82813v10h-16z"></path>
+                                                                </g></g>
+                                                            </svg>
+                                                             View Files
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                <td class="p-1 border-b border-gray-200 bg-white sm:text-xs">
+                                                        <button class="relative bg-yellow-400 text-white py-1 px-5 sm:text-xs hover:bg-yellow-600 transition flex items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                                                                style="fill:#000000;" class="pr-1">
+                                                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" 
+                                                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" 
+                                                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                                                <g transform="scale(10.66667,10.66667)">
+                                                                <path d="M4,4c-1.09425,0 -2,0.90575 -2,2v12c0,1.09426 0.90575,2 2,2h16c1.09426,0 2,-0.90574 2,-2v-10c0,-1.09425 -0.90574,-2 -2,-2h-8l-2,-2zM4,6h5.17188l2,2h8.82813v10h-16z"></path>
+                                                                </g></g>
+                                                            </svg>
+                                                             View Files
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                <td class="p-1 border-b border-gray-200 bg-white sm:text-xs">
+                                                        <button class="relative bg-yellow-400 text-white py-1 px-5 sm:text-xs hover:bg-yellow-600 transition flex items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                                                                style="fill:#000000;" class="pr-1">
+                                                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" 
+                                                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" 
+                                                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                                                <g transform="scale(10.66667,10.66667)">
+                                                                <path d="M4,4c-1.09425,0 -2,0.90575 -2,2v12c0,1.09426 0.90575,2 2,2h16c1.09426,0 2,-0.90574 2,-2v-10c0,-1.09425 -0.90574,-2 -2,-2h-8l-2,-2zM4,6h5.17188l2,2h8.82813v10h-16z"></path>
+                                                                </g></g>
+                                                            </svg>
+                                                             View Files
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                <td class="p-1 border-b border-gray-200 bg-white sm:text-xs">
+                                                        <button class="relative bg-yellow-400 text-white py-1 px-5 sm:text-xs hover:bg-yellow-600 transition flex items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                                                                style="fill:#000000;" class="pr-1">
+                                                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" 
+                                                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" 
+                                                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                                                <g transform="scale(10.66667,10.66667)">
+                                                                <path d="M4,4c-1.09425,0 -2,0.90575 -2,2v12c0,1.09426 0.90575,2 2,2h16c1.09426,0 2,-0.90574 2,-2v-10c0,-1.09425 -0.90574,-2 -2,-2h-8l-2,-2zM4,6h5.17188l2,2h8.82813v10h-16z"></path>
+                                                                </g></g>
+                                                            </svg>
+                                                             View Files
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                <td class="p-1 border-b border-gray-200 bg-white sm:text-xs">
+                                                        <button class="relative bg-yellow-400 text-white py-1 px-5 sm:text-xs hover:bg-yellow-600 transition flex items-center">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256"
+                                                                style="fill:#000000;" class="pr-1">
+                                                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" 
+                                                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" 
+                                                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                                                <g transform="scale(10.66667,10.66667)">
+                                                                <path d="M4,4c-1.09425,0 -2,0.90575 -2,2v12c0,1.09426 0.90575,2 2,2h16c1.09426,0 2,-0.90574 2,-2v-10c0,-1.09425 -0.90574,-2 -2,-2h-8l-2,-2zM4,6h5.17188l2,2h8.82813v10h-16z"></path>
+                                                                </g></g>
+                                                            </svg>
+                                                             View Files
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                         </div>
                     </div>
                 </section>
@@ -79,8 +180,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+      
+
 
 @endsection

@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\OpaController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ use App\Http\Controllers\OpaController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -121,6 +124,14 @@ Route::middleware(['auth','role:agent'])->group(function(){
 
     Route::get('/agent/scholars', [AgentController::class, 
     'AgentScholars'])->name('agent.scholars');
+
+    Route::post('agent/move-selected', [AgentController::class, 
+    'moveSelectedRows'])->name('agent.move-selected');
+
+    Route::post('/agent/viewfiles/{id}', [AgentController::class, 
+    'AgentViewFiles'])->name('agent.viewfiles');
+
+
 
 });// End Group Agent Middleware
 

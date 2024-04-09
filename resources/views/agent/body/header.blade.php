@@ -27,7 +27,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" height="4em" viewBox="0 0 448 512">
                 
                 <path d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
-                <span> <a href="{{ route('student.profile') }}">PROFILE</a></span>
+                <!-- whala pa routes for profile -->
+                <span> <a href="">PROFILE</a></span> 
            <button type="button" id="profileDropdown" class="flex justify-between items-center w-full px-4 py-2"> 
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -38,7 +39,7 @@
         <div id="profileDropdownContent" class="hidden lg:absolute lg:mr-11 lg:right-0 lg:top-20 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
             <div class="py-1">
                 <a href="{{ route('student.change.password') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><li>Change Password</li></a>
-                <a href="{{ route('student.logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><li>Log out</li></a>
+                <a href="{{ route('agent.logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"><li>Log out</li></a>
             </div>
         </div>
     </nav>
