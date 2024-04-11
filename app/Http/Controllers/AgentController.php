@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Models\User;
+use App\Models\File;
 use App\Models\Pending;
 
 class AgentController extends Controller
@@ -26,9 +27,13 @@ class AgentController extends Controller
 }
 
 
+public function viewFiles($id)
+{
+    $user = User::find($id);
+    $files = File::where('user_id', $id)->get();
 
-
-    
+    return view('agent.view_files')->with(compact('user', 'files'));
+}
 
 public function moveSelectedRows(Request $request)
 {
