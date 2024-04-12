@@ -26,15 +26,6 @@ class AgentController extends Controller
     return view('agent.agent_pending', compact('userData'));
 }
 
-
-public function viewFiles($id)
-{
-    $user = User::find($id);
-    $files = File::where('user_id', $id)->get();
-
-    return view('agent.view_files')->with(compact('user', 'files'));
-}
-
 public function moveSelectedRows(Request $request)
 {
     // kukuha ng ID

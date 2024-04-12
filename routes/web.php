@@ -131,11 +131,6 @@ Route::middleware(['auth','role:agent'])->group(function(){
     Route::post('/agent/viewfiles/{id}', [AgentController::class, 
     'AgentViewFiles'])->name('agent.viewfiles');
 
-    Route::get('/agent/view-files', [AgentController::class, 
-    'AgentViewFiles'])->name('agent.view-files');
-
-    Route::get('/agent/view-files/{id}', 'App\Http\Controllers\AgentController@viewFiles')->name('view-files');
-
 
 });// End Group Agent Middleware
 

@@ -18,38 +18,38 @@
                         @foreach($files as $file)
                         <tr>
                             <td class="pr-4 font-semibold">FORM 137/138</td>
-                            <td>{{ $file->filename }}</td>
-                            <td><a href="{{ asset('upload/student_File_Uploads/' . $file->filename) }}" target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
+                            <td></td>
+                            <td><target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
                         <tr>
                             <td class="pr-4 font-semibold">PARENT'S INCOME TAX RETURN</td>
                             <td></td>
-                            <td><a href="{{ asset('upload/student_File_Uploads/' . $file->filename) }}" target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
+                            <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
                         <tr>
                             <td class="pr-4 font-semibold">CERTIFICATE OF RESIDENCY</td>
                             <td></td>
-                            <td><a href="{{ asset('upload/student_File_Uploads/' . $file->filename) }}" target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
+                            <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
                         <tr>
                             <td class="pr-4 font-semibold">CERTIFICATE OF GOOD MORAL</td>
                             <td></td>
-                            <td><a href="{{ asset('upload/student_File_Uploads/' . $file->filename) }}" target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
+                            <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
                         <tr>
                             <td class="pr-4 font-semibold">SCHOLARSHIP LETTER</td>
                             <td></td>
-                            <td><a href="{{ asset('upload/student_File_Uploads/' . $file->filename) }}" target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
+                            <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
                         <tr>
                             <td class="pr-4 font-semibold">PLM ID</td>
                             <td></td>
-                            <td><a href="{{ asset('upload/student_File_Uploads/' . $file->filename) }}" target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
+                            <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
                         <tr>
                             <td class="pr-4 font-semibold">APPLICATION FORM</td>
                             <td></td>
-                            <td><a href="{{ asset('upload/student_File_Uploads/' . $file->filename) }}" target="_blank" button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
+                            <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
                         @endforeach
                     </table>
@@ -62,31 +62,31 @@
                         <table class="col-span-2 table-auto">
                             <tr>
                                 <td class="pr-4 font-semibold">Student Number</td>
-                                <td>{{ $user->student_no }}</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="pr-4 font-semibold">Name</td>
-                                <td>{{ $user->name }}</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="pr-4 font-semibold">Degree Program</td>
-                                <td>{{ $user->course }}</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="pr-4 font-semibold">GWA</td>
-                                <td>{{ $user->current_gwa }}</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="pr-4 font-semibold">Contact Number</td>
-                                <td>{{ $user->phone }}</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="pr-4 font-semibold">PLM E-mail Account</td>
-                                <td>{{ $user->email }}</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td class="pr-4 font-semibold">Household Income</td>
-                                <td>{{ $user->household_income }}</td>
+                                <td></td>
                             </tr>
                         </table>
                     </div>
