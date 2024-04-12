@@ -26,7 +26,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512" class="sm:mr-4">
                                         <path fill="white" d="M64 480H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H288c-10.1 0-19.6-4.7-25.6-12.8L243.2 57.6C231.1 41.5 212.1 32 192 32H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64z" />
                                     </svg>
-                                    <span class="text-white text-xl font-thin ml-2">Candidate Status</span>
+                                    <span class="text-white text-xl font-thin ml-2">Applicant Status</span>
                                 </span>
                                 <svg class="w-4 h-4" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -36,7 +36,7 @@
                             <div id="candidateDropdownContent" class="hidden origin-top-right ml-10 right-0 mt-2 w-60 rounded-md shadow-lg bg-blue-800 ring-1 ring-black ring-opacity-5">
                                 <div class="py-1">
                                     <a href="{{ route('agent.lstofstdnts') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('List of Students', 'btnListofStuds')">
-                                        <li>List of Students</li>
+                                        <li>List of Applicant</li>
                                     </a>
                                     <a href="{{ route('agent.pending') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Pending', 'btnPending')">
                                         <li>Pending</li>
@@ -45,7 +45,7 @@
                                         <li>Completed Requirements</li>
                                     </a>
                                     <a href="{{ route('agent.candidatestdnt') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Candidate Students', 'btnCandidateStuds')">
-                                        <li>Candidate Students</li>
+                                        <li>Applicants</li>
                                     </a>
                                     <a href="{{ route('agent.scholars') }}" class="block px-4 py-2 text-sm text-white hover:bg-blue-700" onclick="changeContentbyDropdown('Scholars', 'btnScholar')">
                                         <li>Scholars</li>
