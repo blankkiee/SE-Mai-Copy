@@ -79,9 +79,12 @@
                 <div class="col-span-1 flex items-center">
                     <label class="mr-2 sm:text-xs">Search filter:</label>
                     <select class="border p-1 rounded-md h-8 w-60 sm:text-xs">
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="1"> </option>
+                        <option value="2">Pending</option>
+                        <option value="3">Approved</option>
+                        <option value="4">Disapproved</option>
+                        <option value="5">Resubmission</option>
+                        <option value="6">Scholar</option>
                     </select>
                 </div>
                 

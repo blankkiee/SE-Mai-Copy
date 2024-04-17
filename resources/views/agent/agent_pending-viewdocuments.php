@@ -15,7 +15,6 @@
                     <p class="text-yellow-400 font-bold text-md mx-3 mt-3">Student Requirements:</p>
                     <!-- sample table -->
                     <table class="table-auto mx-5 mt-2 mb-5">
-                        @foreach($files as $file)
                         <tr>
                             <td class="pr-4 font-semibold">FORM 137/138</td>
                             <td></td>
@@ -51,7 +50,6 @@
                             <td></td>
                             <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                         </tr>
-                        @endforeach
                     </table>
                 </div>
 

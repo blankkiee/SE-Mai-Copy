@@ -53,7 +53,7 @@
                                 </span>
                             </td>
                             <td class="p-1 border-b border-gray-200 bg-white sm:text-xs text-center">
-                                <button onclick="showStudentDialog()" class="bg-yellow-400 text-white py-1 px-7 sm:text-xs hover:bg-yellow-600 transition flex items-center mx-auto">
+                                <button onclick="showStudentDialog('{{ $user->name }}')" class="bg-yellow-400 text-white py-1 px-7 sm:text-xs hover:bg-yellow-600 transition flex items-center mx-auto">
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256" style="fill:#000000;" class="pr-1">
                                         <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
                                             <g transform="scale(10.66667,10.66667)">
@@ -107,14 +107,7 @@
                         <table class="table-auto mx-5 mt-2 mb-5">
 
                             <tr>
-                                <td class="pr-4 font-semibold">
-                                    <span class="h4 ms-3 ">
-                                        <!-- I cant Fix this part -->
-
-                                        <!-- Other properties -->
-
-                                    </span>
-                                </td>
+                                <td class="pr-4 font-semibold">FORM 137/138</td>
 
                                 <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                             </tr>
@@ -158,32 +151,32 @@
                             <p class="col-span-2 text-yellow-400 font-bold text-md">Student Information:</p>
                             <table class="col-span-2 table-auto">
                                 <tr>
-                                    <td class="pr-4 font-semibold">Student Number</td>
-                                    <td></td>
+                                    <td class="pr-4 font-semibold">Student Number:</td>
+                                    <td>{{ $user->student_no }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="pr-4 font-semibold">Name</td>
-                                    <td></td>
+                                    <td class="pr-4 font-semibold">Name:</td>
+                                    <td>{{ $user->name }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="pr-4 font-semibold">Degree Program</td>
-                                    <td></td>
+                                    <td class="pr-4 font-semibold">Degree Program:</td>
+                                    <td>{{ $user->course }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="pr-4 font-semibold">GWA</td>
-                                    <td></td>
+                                    <td class="pr-4 font-semibold">GWA:</td>
+                                    <td>{{ $user->current_gwa }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="pr-4 font-semibold">Contact Number</td>
-                                    <td></td>
+                                    <td class="pr-4 font-semibold">Contact Number:</td>
+                                    <td>{{ $user->phone }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="pr-4 font-semibold">PLM E-mail Account</td>
-                                    <td></td>
+                                    <td class="pr-4 font-semibold">PLM E-mail Account:</td>
+                                    <td>{{ $user->email }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="pr-4 font-semibold">Household Income</td>
-                                    <td></td>
+                                    <td class="pr-4 font-semibold">Household Income:</td>
+                                    <td>{{ $user->household_income }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -317,7 +310,17 @@
 <!-- script for viewing student info -->
 <script>
     // Function to show the student dialog
-    function showStudentDialog() {
+    function showStudentDialog(name) {
+        // AJAX request to fetch user details
+        fetch(`/get-user-details/${name}`)
+        .then(response => response.json())
+        .then(data => {
+            // Handle the received data, e.g., update UI with user details
+            console.log(data); // Assuming data contains user details
+        })
+        .catch(error => {
+            console.error('Error fetching user details:', error);
+        });
         document.getElementById('studentDialog').classList.remove('hidden');
     }
 

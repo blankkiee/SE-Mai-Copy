@@ -26,6 +26,18 @@ class AgentController extends Controller
     return view('agent.agent_pending', compact('userData'));
 }
 
+public function getUserDetailsByPhone($name)
+{
+    $user = User::where('name', $name)->first();
+
+    // Handle if user not found or return the user data as needed
+    if (!$user) {
+        return response()->json(['error' => 'User not found'], 404);
+    }
+
+    return response()->json($user);
+}
+
 public function moveSelectedRows(Request $request)
 {
     // kukuha ng ID
