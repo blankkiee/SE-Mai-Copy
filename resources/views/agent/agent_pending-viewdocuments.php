@@ -5,7 +5,7 @@
 
 <!-- Student Dialog -->
 <div id="studentDialog" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex items-center justify-center h-screen ">
         <div class="bg-white shadow-md rounded-md p-8 relative">
             <span class="cursor-pointer absolute top-2 right-5 text-gray-500" onclick="closeStudentDialog()">x</span>
 

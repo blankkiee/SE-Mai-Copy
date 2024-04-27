@@ -6,19 +6,7 @@
                 <div class="flex flex-col justify-between bg-blue-800 h-full items-center space-y-4">
                     <div class="bg-blue-800 flex flex-col justify-around items-center h-full w-full space-y-3">
                         <h1 class="text-3xl font-bold pt-5 lg:p-0 text-white">PLM ADMIN</h1>
-                    <!--
-                        <div class=" lg:w-full sm:w-1/3 w-full">
-                            <button type="button" id="studstats" class="flex justify-between items-center w-full px-4 py-2">
-                                <span class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512" class="sm:mr-4">
-                                        <path fill="white" d="M224 80c0-26.5-21.5-48-48-48H80C53.5 32 32 53.5 32 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80zm0 256c0-26.5-21.5-48-48-48H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336zM288 80v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48zM480 336c0-26.5-21.5-48-48-48H336c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h96c26.5 0 48-21.5 48-48V336z" />
-                                    </svg>
-                                    <a href="admin-studentstatistics.php">
-                                        <span class="text-white text-xl font-thin ml-2">Student Statistics</span>
-                                    </a>
-                                </span>
-                            </button>
-                        </div> -->
+                  
 
                         <div class="lg:w-full sm:w-1/3 w-full">
                             <button type="button" id="candidateDropdown" class="flex justify-between items-center w-full px-4 py-2">

@@ -65,8 +65,14 @@ public function moveSelectedRows(Request $request)
             // $user->delete();
         }
     }
+     $notification = array(
+            'message' => 'Moved Successfully',
+            'alert-type' => 'success'
+        );
 
-    return redirect()->back()->with('success', 'Selected rows moved successfully.');
+        
+
+    return redirect()->back()->with($notification);
 }// End Method
 
 

@@ -108,6 +108,7 @@
 
                             <tr>
                                 <td class="pr-4 font-semibold">FORM 137/138</td>
+                                <td>{{ $user->phone }}</td>
 
                                 <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                             </tr>
@@ -201,8 +202,6 @@
                             </div>
                         </div>
                         <div class="col-span-3 bg-white p-4 rounded-md">
-
-
                             <!-- Submit Button -->
                             <button id="submitButton" class="bg-gray-300 text-gray-500 py-1 px-3 rounded-md cursor-not-allowed" disabled>Submit</button>
                         </div>
@@ -216,6 +215,15 @@
 </div>
 
 
+<script>
+    function onSubmit() {
+        // Display a JavaScript alert
+        alert('File uploaded successfully');
+
+        // Return true to submit the form
+        return true;
+    }
+</script>
 
 <script>
     function changeContentbyDropdown(content, buttonId) {
