@@ -53,11 +53,13 @@ public function moveSelectedRows(Request $request)
                 ['id' => $id],
                 [
                     'name' => $user->name,
+                    'student_no' =>$user->student_no, 
                     'year' => $user->year,
                     'course' => $user->course,
                     'phone' => $user->phone,
                     'gwa' => $user->gwa,
                     'parents_income' => $user->parents_income,
+                    
                 ]
             );
 

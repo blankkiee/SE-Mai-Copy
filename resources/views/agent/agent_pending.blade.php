@@ -43,7 +43,7 @@
                             </td>
                             <td class="p-1 border-b border-gray-200 bg-white sm:text-xs text-center">
                                 <p class="text-gray-900 whitespace-no-wrap">
-                                    {{ $user->phone }}
+                                    {{ $user->student_no }}
                                 </p>
                             </td>
                             <td class="border-b border-gray-200 bg-white sm:text-xs uppercase text-center">
@@ -108,7 +108,7 @@
 
                             <tr>
                                 <td class="pr-4 font-semibold">FORM 137/138</td>
-                                <td>{{ $user->phone }}</td>
+                                <td>{{ $user->gwa }}</td>
 
                                 <td><button class="bg-gray-200 text-gray-700 px-2 py-1 rounded-md">View</button></td>
                             </tr>
